@@ -1,0 +1,239 @@
+.header {
+  height: 120px;
+  background-image: linear-gradient(0, #FD5D32, #F53E2D);
+}
+
+.header_list {
+  padding: 0;
+  margin-left: -5px;
+  margin-top: 6px;
+}
+
+.nav_item,
+.nav_item_link {
+  display: inline-block;
+  font-size: 1.4rem;
+  color: var(--white-color);
+  font-weight: 300;
+  height: 100%;
+  padding: 0;
+}
+
+.nav_item,
+.nav_item_link .nav_icon-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav_item {
+  margin: 0 10px 0 0;
+  position: relative;
+}
+
+
+/* Hover QR-code */
+
+.nav_item-qr:hover .header_qr {
+  display: block;
+}
+
+.header_nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.font-weight {
+  font-weight: 500;
+}
+
+.nav_item-line::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.nav_item-line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-left: solid 2px #FB9086;
+  height: 14px;
+  top: 5px;
+  right: -7px;
+}
+
+.nav_item:hover,
+.nav_item_link:hover {
+  color: hsla(0, 0%, 100%, .7);
+  cursor: pointer;
+}
+
+.nav_icon-link {
+  color: var(--white-color);
+}
+
+.nav_icon {
+  font-size: 1.8rem;
+  margin: 0px 4px;
+}
+
+.nav_item .nav_item-nopointer {
+  cursor: text;
+  color: var(--white-color);
+}
+
+
+/* QR CODE */
+
+.header_qr {
+  background-color: var(--white-color);
+  width: 185px;
+  position: absolute;
+  top: 155%;
+  left: 0;
+  border-radius: 3px;
+  padding: 5px;
+  display: none;
+  cursor: context-menu;
+  animation: hover 0.4s linear;
+}
+
+
+/* Tạo 1 lớp giả để nối QRCode voi item */
+
+.header_qr::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: -15px;
+  left: 0;
+}
+
+.qr_img {
+  width: 100%;
+}
+
+.qr_apps {
+  display: flex;
+  justify-content: space-between;
+  cursor: context-menu;
+}
+
+.app_link:first-child {
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+.app_link:last-child {
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+.app_img {
+  height: 17px;
+}
+
+
+/* Notify */
+
+.box_notify {
+  position: absolute;
+  width: 404px;
+  background-color: var(--white-color);
+  top: 118%;
+  right: 2px;
+  border-radius: 4px;
+  border: solid 0.5px #ccc;
+  animation: notifyshow 0.3s ease-in;
+  transform-origin: calc(100% - 20px) top;
+  display: none;
+}
+
+.header_notify::before {
+  content: "";
+  border: 26px solid;
+  border-color: transparent transparent var(--white-color) transparent;
+  top: -37px;
+  right: 18px;
+  position: absolute;
+}
+
+.hover_notify:hover .box_notify {
+  display: block;
+}
+
+.header_notify {
+  height: 40px;
+}
+
+.heading_notify {
+  color: #ccc;
+  font-weight: 200;
+  line-height: 40px;
+  margin: 0 0 0 12px;
+  user-select: none;
+}
+
+.notify_list {
+  padding-left: 0;
+}
+
+.notify_item {
+  background-color: var(--main-color-rgba);
+}
+
+.notify_item:hover {
+  background-color: #f2f3f5;
+}
+
+.notify_link {
+  display: flex;
+  padding: 12px;
+  align-items: flex-start;
+}
+
+.notify_list-img {
+  width: 48px;
+  object-fit: contain;
+}
+
+.notify_info {
+  margin-left: 6px;
+}
+
+.notify_name {
+  display: block;
+  color: var(--black-color);
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.6rem;
+}
+
+.notify_descriotion {
+  color: #756f6e;
+  font-size: 1.3rem;
+}
+
+.footer_notify {
+  font-weight: 300;
+  line-height: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer_notify-link {
+  color: var(--text-color);
+  user-select: none;
+}
+
+@keyframes notifyshow {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
